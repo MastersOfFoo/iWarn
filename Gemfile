@@ -16,6 +16,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'thin'
+
 group :development do
   gem 'sqlite3'
 end
