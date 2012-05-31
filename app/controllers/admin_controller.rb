@@ -2,7 +2,6 @@ class AdminController < ApplicationController
   require "securerandom"
   http_basic_authenticate_with :name => "admin", :password => "default"
   def index
-    @users = User.all
   end
   
   def add_new_user
