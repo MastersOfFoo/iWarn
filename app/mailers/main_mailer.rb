@@ -6,6 +6,5 @@ class MainMailer < ActionMailer::Base
     @name = name
     @password = password
     mail(:to => to, :subject => "iWarn - Congrats!" ) 
-
   end
 end
