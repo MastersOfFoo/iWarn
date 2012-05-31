@@ -3,10 +3,13 @@ IWarn::Application.routes.draw do
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "sessions#new", :as => "login"
     get "signup" => "users#new", :as => "signup"
+    get "welcome" => "users#welcome", :as => "welcome"
     root :to => "sessions#new"
     resources :users
     resources :sessions
-    get "secret" => "secret#index"
+    get "admin" => "admin#index"
+    get "add_new_user" => "admin#add_new_user"
+    match 'create_new_user' => 'admin#create_new_user', :via => :post
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
