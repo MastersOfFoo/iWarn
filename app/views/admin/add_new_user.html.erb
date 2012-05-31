@@ -1,32 +1,32 @@
 <h1>Create new User</h1>
 
 <%= form_tag(create_new_user_path, :method=>'post', :multipart => true) do %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 	<div class="field">
-    <%= label_tag 'first_name' %>
-    <%= text_field_tag 'user[first_name]' %>
-  </div>
+		<%= label_tag 'first_name' %>
+		<%= text_field_tag 'user[first_name]' %>
+	</div>
 	<div class="field">
-    <%= label_tag :last_name %>
-    <%= text_field_tag 'user[last_name' %>
-  </div>
+		<%= label_tag :last_name %>
+		<%= text_field_tag 'user[last_name' %>
+	</div>
 	<div class="field">
-    <%= label_tag :identification_number %>
-    <%= text_field_tag 'user[identification_number' %>
-  </div>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag 'user[email' %>
-  </div>
-  <div class="actions"><%= submit_tag %></div>
+		<%= label_tag :identification_number %>
+		<%= text_field_tag 'user[identification_number' %>
+	</div>
+	<div class="field">
+		<%= label_tag :email %>
+		<%= text_field_tag 'user[email' %>
+	</div>
+	<div class="actions"><%= submit_tag %></div>
 <% end %>
 <br/><br/><br/>
