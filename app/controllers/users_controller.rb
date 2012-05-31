@@ -14,4 +14,18 @@ class UsersController < ApplicationController
   
   def welcome
   end
+  
+  def edit_user
+    @user = User.find(params[:id])
+  end
+  
+  def update_user
+    @user = User.find(params[:id])
+  end
+  
+  def destroy    
+    @user = User.find(params[:id]).destroy
+    redirect_to admin_path,:notice => "User was successfully destroyed!"
+  end
+  
 end
