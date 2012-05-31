@@ -7,7 +7,6 @@ class AdminController < ApplicationController
   
   def add_new_user
     @user = User.new(params[:user])
-
   end
   
   def create_new_user
