@@ -7,6 +7,7 @@ class AdminController < ApplicationController
   
   def add_new_user
     @user = User.new(params[:user])
+    MainMailer.added_as_a_user(current_user.email).deliver
   end
   
   def create_new_user
