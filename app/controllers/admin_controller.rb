@@ -7,14 +7,16 @@ class AdminController < ApplicationController
   
   def add_new_user
     @user = User.new(params[:user])
-    MainMailer.added_as_a_user(current_user.email).deliver
+
   end
   
   def create_new_user
     @user = User.new(params[:user])
-    @user.password_digest = SecureRandom.hex[0..5]
-    @user.password_confirmation = SecureRandom.hex[0..5]
+    password = SecureRandom.hex[0..5]
+    @user.password = password
+    @user.password_confirmation = password
     if @user.save
+      MainMailer.added_as_a_user(@user.email).deliver
       redirect_to admin_path, :notice => "New user added!"
     else
       redirect_to admin_path, :notice => "This email is already registered, please add another one!"
