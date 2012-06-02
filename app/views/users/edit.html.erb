@@ -1,5 +1,5 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |f| %>
+<h1>Edit User</h1>
+<%= form_for @user do |f| %> 
 	<% if @user.errors.any? %>
 	<div class="error_messages">
 		<h2>Form is invalid</h2>
@@ -36,4 +36,3 @@
 	</div>
 	<div class="actions"><%= f.submit %></div>
 <% end %>
-<br/><br/><br/>

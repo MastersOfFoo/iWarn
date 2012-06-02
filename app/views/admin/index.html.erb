@@ -1,8 +1,5 @@
 <h1>Admin Dashboard</h1>
-<h2>Users</h2>
 <ul>
-<% @users.each do |user| %>
- <li><%= user.first_name %> <%= user.last_name %></li>
-<% end %>
+	<li><%= link_to "See users" , users_path %></li>
+	<li><%= link_to "See Events" , "" %></li>
 </ul>
-<%= link_to "Add new user", add_new_user_path %>
