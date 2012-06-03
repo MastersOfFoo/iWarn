@@ -1,0 +1,31 @@
+<h1>Create new User</h1>
+<%= form_for([:admin, @user]) do |f| %>
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="field">
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>
+	</div>
+	<div class="field">
+		<%= f.label :last_name %>
+		<%= f.text :last_name %>
+	</div>
+	<div class="field">
+		<%= f.label :identification_number %>
+		<%= f.text_field :identification_number %>
+	</div>
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+	<div class="actions"><%= f.submit %></div>
+<% end %>
+<br/><br/><br/>

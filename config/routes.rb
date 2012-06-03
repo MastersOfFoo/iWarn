@@ -7,9 +7,10 @@ IWarn::Application.routes.draw do
     root :to => "sessions#new"
     resources :users
     resources :sessions
-    get "admin" => "admin#index"
-    get "add_new_user" => "admin#add_new_user"
-    match 'create_new_user' => 'admin#create_new_user', :via => :post
+    
+    namespace :admin do
+      resources :users, only: [:index, :new, :create]
+    end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
