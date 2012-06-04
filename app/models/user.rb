@@ -11,8 +11,4 @@ class User < ActiveRecord::Base
   def set_default_password
     self.password = self.password_confirmation = SecureRandom.hex[0..5]
   end
-
-  def deliver_confirmation_email
-    MainMailer.added_as_a_user(self.email, self.first_name, self.password).deliver
-  end
 end
