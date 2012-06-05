@@ -139,7 +139,7 @@ a {
         display: block;
         width: 22px;
         height: 22px;
-        background: url(/assets/bullets.png) no-repeat;
+        background: url(../assets/bullets.png) no-repeat;
         text-indent: -9999px;
         border: 0;
         margin-right: 3px;
@@ -240,7 +240,7 @@ a {
         text-shadow: none !important;
         [class^="icon-"], [class*=" icon-"] {
             opacity: 1;
-            background-image: url(/assets/bootstrap/img/glyphicons-halflings-white.png);
+            background-image: url("../styles/bootstrap/img/glyphicons-halflings-white.png");
         }
     }
     &:active {
@@ -320,7 +320,7 @@ body {
 
 #wrapper {
     &.login{
-        background: url(/assets/login_bg.png) no-repeat top center;
+        background: url(../assets/login_bg.png) no-repeat top center;
         min-height: 620px;
         background-position-y: 120px;
     }
@@ -333,17 +333,17 @@ body {
     .box-shadow(0, 0, 2px, @gray_8);
     border: 1px solid @gray_8;
     border-top: none;
-    background: url(/assets/header_bg.png) repeat-x;
+    background: url(../assets/header_bg.png) repeat-x;
     height: 48px;
     &.login{
-        background: url(/assets/header_logo.png) no-repeat bottom center;
+        background: url(../assets/header_logo.png) no-repeat bottom center;
         width: 450px;
         height: 133px;
         margin: 0 auto;
         padding-top: 50px;
     }
     #logo {
-        background: url(/assets/small_logo.png) no-repeat bottom center;
+        background: url(../assets/small_logo.png) no-repeat bottom center;
         float: left;
         margin: 6px 0 0 24px;
         width: 114px;
@@ -352,7 +352,7 @@ body {
 }
 
 #login_box {
-    background: url(/assets/login_box.png) no-repeat bottom center;
+    background: url(../assets/login_box.png) no-repeat bottom center;
     width: 440px;
     height: 275px;
     margin: 0 auto;
@@ -403,4 +403,16 @@ body {
             width: 160px;
         }
     }   
+}
+
+.error_messages {
+    .rounded-corners(4px);
+    margin: 16px 0;
+    padding: 8px;
+    background: #ee7777;
+    display: block;
+    float: left;
+    h2 {
+        .open-sans(18px, normal, white);
+    }
 }
