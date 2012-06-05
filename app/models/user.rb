@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create
   validates_uniqueness_of :email
-  before_create :set_default_password
+  before_validation :set_default_password, :on => :create
   after_create :deliver_confirmation_email
 
   private
