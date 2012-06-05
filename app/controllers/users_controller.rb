@@ -21,12 +21,6 @@ class UsersController < ApplicationController
       end
     end  
   end
-  
-  def destroy    
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to admin_path, :notice => "User was successfully destroyed!"
-  end
 
   private
   def user_params
