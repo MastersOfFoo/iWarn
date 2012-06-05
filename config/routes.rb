@@ -1,17 +1,17 @@
 IWarn::Application.routes.draw do
-
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "sessions#new", :as => "login"
     get "signup" => "users#new", :as => "signup"
     get "welcome" => "users#welcome", :as => "welcome"
+    get "admin" => "admin/users#index", :as => "admin"
     root :to => "sessions#new"
     resources :users
     resources :sessions
-    
+
     namespace :admin do
-      resources :users, only: [:index, :new, :create]
+      resources :users, except: [:edit, :update, :show]
     end
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
