@@ -1,15 +1,15 @@
 module Admin
-  class UsersController < ApplicationController  
+  class UsersController < ApplicationController
     http_basic_authenticate_with :name => "admin", :password => "default"
 
     def index
       @users = User.all
     end
-    
+
     def new
       @user = User.new
     end
-    
+
     def create
       @user = User.new(user_params)
       if @user.save
@@ -19,8 +19,8 @@ module Admin
         render "new"
       end
     end
-    
-    def destroy    
+
+    def destroy
       @user = User.find(params[:id])
       @user.destroy
       redirect_to admin_path, :notice => "User was successfully destroyed!"
