@@ -6,10 +6,12 @@ IWarn::Application.routes.draw do
     get "admin" => "admin/users#index", :as => "admin"
     root :to => "sessions#new"
     resources :users
+ 
     resources :sessions
 
     namespace :admin do
       resources :users, except: [:edit, :update, :show]
+      resources :events, only: [:index, :destroy, :show]
     end
 
   # The priority is based upon order of creation:
