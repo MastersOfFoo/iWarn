@@ -9,6 +9,9 @@ module Admin
     def show
       @event = Event.find(params[:id])
       @photos = @event.photos
+      @vehicle = @event.vehicles
+      @people = @event.people
+      @event_logs = @event.event_logs 
     end
     
     def destroy
