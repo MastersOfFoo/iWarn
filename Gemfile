@@ -16,6 +16,8 @@ group :assets do
   gem 'therubyracer'
 end
 
+gem 'rake 
+
 gem 'bcrypt-ruby', :require => "bcrypt"
 
 gem 'jquery-rails'
