@@ -27,46 +27,21 @@
 			</div>
 			<br/><br/><br/>
 			<h3>People Involved on the Event</h3>
-			<ul>
-			<% unless @people.blank? %>
-				<% @people.each do |person| %>
-					<label><%= person.person_id %></label>
-				<% end %>
-			<% end %>
-		  </ul>
+			<%= render( :partial =>  'person', :collection => @people ) || 'There are no people related.'  %>
 			<br/><br/><br/>
 			<h3>Vehicles Involved on the Event</h3>
-			<ul>
-			<% unless @vehicles.blank? %>
-				<% @vehicles.each do |vehicle| %>
-			  	<label> - <%= vehicle.identification_number %></label>
-				<% end %>
-			<% end %>
-			</ul>
-			 <br/><br/><br/>
-				<h3>Event Location</h3>		
-				<img src="http://maps.google.com/maps/api/staticmap?center=<%= @event.latitude %>,<%= @event.longitude %>&zoom=14&size=400x400&sensor=false"/>
- <br/><br/><br/>
-	<h3>Event Photos</h3>		
-		<!-- Slideshow HTML -->
-		<div id="slideshow">
-		  <div id="slidesContainer">
-				<% @event.photos.each do |photo| %>
-		     	<div class="slide">
-		        <img src="<%= photo.url %>" class="event_picture"/>
-		      </div>
-				<% end %>
-		  </div>
-		</div>				
-	
-				<h3>Event Log</h3>
-				<ul>
-				<% unless @event_logs.blank? %>
-					<% @event_logs.each do |log| %>
-				  	<label> - <%= log.log %>, <%= log.created_at %></label>
-					<% end %>
-				<% end %>
-				</ul>
-	
+			<%= render( :partial =>  'vehicle', :collection => @vehicles ) || 'There are no vehicles related.' %>
+			<br/><br/><br/>
+			<h3>Event Location</h3>		
+			<img src="http://maps.google.com/maps/api/staticmap?center=<%= @event.latitude %>,<%= @event.longitude %>&markers=color:blue&zoom=14&size=400x400&sensor=false"/>
+ 			<br/><br/><br/>
+			<h3>Event Photos</h3>		
+			<div id="slideshow">
+		  	<div id="slidesContainer">		
+					<%= render( :partial =>  'photo', :collection => @photos ) || 'There are no photos available.'  %>
+		  	</div>
+			</div>				
+			<h3>Event Log</h3>
+			<%= render( :partial =>  'event_log', :collection => @event_logs ) || 'There are no event logs available.'  %>
 	</div>
 </div>
