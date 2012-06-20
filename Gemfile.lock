@@ -124,6 +124,7 @@ DEPENDENCIES
   less-rails-bootstrap
   pg
   rails (= 3.2.4.rc1)
+  rake
   sqlite3
   therubyracer
   thin
